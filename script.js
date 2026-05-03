@@ -88,7 +88,7 @@ async function openModal(id) {
     document.getElementById('modal-title').innerText = issue.title;
     document.getElementById('modal-desc').innerText = issue.description;
     document.getElementById('modal-author').innerText = issue.author;
-    document.getElementById('modal-priority').innerText = issue.priority;
+    // document.getElementById('modal-priority').innerText = issue.priority;
     document.getElementById('modal-label').innerText = issue.label;
     document.getElementById('modal-date').innerText = new Date(issue.createdAt).toLocaleString();
     
