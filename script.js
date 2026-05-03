@@ -45,7 +45,7 @@ async function fetchIssues(query = '') {
 
 function displayIssues(issues) {
     const grid = document.getElementById('issues-grid');
-    grid.innerHTML = issues.map(issues => `<div onclick="openModal('${issue.id}')" class="card bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow p-5 ${issue.status === 'open' ? 'card-open' : 'card-closed'}">
+    grid.innerHTML = issues.map(issue => `<div onclick="openModal('${issue.id}')" class="card bg-white shadow-md cursor-pointer hover:shadow-lg transition-shadow p-5 ${issue.status === 'open' ? 'card-open' : 'card-closed'}">
             <div class="flex justify-between items-start mb-2">
                 <span class="badge badge-outline text-[10px] uppercase font-bold">${issue.label}</span>
                 <span class="badge ${issue.priority === 'High' ? 'badge-error' : issue.priority === 'Medium' ? 'badge-warning' : 'badge-success'} badge-xs"></span>
