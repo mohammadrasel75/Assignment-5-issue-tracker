@@ -1,6 +1,6 @@
 let allIssues = [];
 // 1. Authentication 
-document.getElementById('login-form').addEventListener('click', () =>{
+document.getElementById('login-btn').addEventListener('click', () =>{
     const user = document.getElementById('username').value;
     const pass = document.getElementById('password').value;
 
