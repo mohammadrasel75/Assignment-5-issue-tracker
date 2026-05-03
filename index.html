@@ -62,9 +62,42 @@
                     <a role="tab" class="tab" onclick="filterIssues('open', this)">Open</a>
                     <a role="tab" class="tab" onclick="filterIssues('closed', this)">Closed</a>
                 </div>
+        <div class="flex gap-4 text-sm font-medium">
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-green-500"></span>Open</span>
+            <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-purple-500"></span>Closed</span>
+        </div>
+        
+        
              </div>
+
+  <!--Issues Grid-->
+  <div id="loading-spinner" class="flex justify-center my-10 hidden">
+    <span class="loading loading-spinner loading-lg text-indigo-600"></span>
+  </div>
+  <div id="issues-grid" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <!--Cards will be injected here-->
+  </div>           
         </main>
      </section>
-
+  <!-- Issue Details Modal -->
+   <dialog id="issue_modal" class="modal">
+    <div class="modal-box w-11/12 max-w-2xl">
+        <h3 id="modal-title" class="font-bold text-2xl"></h3>
+        <div id="modal-badge-container" class="my-2"></div>
+        <p id="modal-desc" class="py-4 text-gray-600"></p>
+        <div class="divider"></div>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+            <p><strong>Author:</strong> <span id="modal-author"></span></p>
+            <p><strong>Created:</strong> <span id="modal-created"></span></p>
+            <p><strong>Label:</strong> <span id="modal-label"></span></p>
+           <p><strong>Created:</strong> <span id="modal-date"></span></p>
+        </div>
+        <div class="modal-action">
+                <form method="dialog"><button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button></form>
+                <form method="dialog"><button class="btn btn-primary bg-indigo-600 border-none text-white">Close</button></form>
+            </div>
+    </div>
+   </dialog>   
+<script src="script.js"></script>
     </body>
 </html>

@@ -77,4 +77,23 @@ function filterIssues(status, el){
 document.getElementById('search-btn').addEventListener('click', () => {
     const query = document.getElementById('search-input').value;
     fetchIssues(query);
-})
+});
+
+// 5. Modal Functionality
+async function openModal(id) {
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`);
+    const result = await res.json();
+    const issue = result.data;
+
+    document.getElementById('modal-title').innerText = issue.title;
+    document.getElementById('modal-desc').innerText = issue.description;
+    document.getElementById('modal-author').innerText = issue.author;
+    document.getElementById('modal-priority').innerText = issue.priority;
+    document.getElementById('modal-label').innerText = issue.label;
+    document.getElementById('modal-date').innerText = new Date(issue.createdAt).toLocaleString();
+    
+    const badgeContainer = document.getElementById('modal-badge-container');
+    badgeContainer.innerHTML = `<span class="badge ${issue.status === 'open' ? 'badge-success' : 'badge-secondary'} text-white">${issue.status}</span>`;
+
+    issue_modal.showModal();
+}
