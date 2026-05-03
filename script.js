@@ -13,3 +13,19 @@ document.getElementById('login-form').addEventListener('click', () =>{
     }
 
 });
+
+// 2. Data Fetching 
+
+async function fetchIssues(query = '') {
+    const grid = document.getElementById('issues-grid');
+    const loader = document.getElementById('loading-spinner');
+
+    grid.innerHTML = '';
+    loader.classList.remove('hidden');
+
+    try {
+        const url = query 
+        ?`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${query}`
+        :`https://phi-lab-server.vercel.app/api/v1/lab/issues`;
+    }
+}
